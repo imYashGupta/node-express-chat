@@ -95,8 +95,8 @@ app.use((error,request,response,next) => {
 })
 mongoose.connect("mongodb+srv://yash_personal:mongodb@cluster0.br2z6.mongodb.net/electron_chat?retryWrites=true&w=majority")
 .then(response => {
-
-    const server=app.listen(8000); 
+    const PORT = process.env.port || 8000;
+    const server=app.listen(PORT); 
     const io = require('./socket.js').init(server);
     io.on("connection",socket => {
         //console.log("socket Connected",socket)
