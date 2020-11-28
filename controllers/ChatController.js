@@ -39,12 +39,12 @@ exports.saveMessage = async (request, response, next) => {
   const message = new Chat();
   message.to = toUser;
   message.from = fromUser;
-  if(request.body?.text?.trim().length > 0 || text!=undefined){
+  if(text!='' || text!=undefined){
       message.text = text;
   }
   
-  if(request?.file?.path){
-    console.log(request?.file)
+  if(request.file.path){
+    console.log(request.file)
     message.file = {
       src:process.env['APP_URL']+request.file.path,
       mimetype: request.file.mimetype

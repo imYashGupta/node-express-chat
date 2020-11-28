@@ -33,6 +33,7 @@
     "x-ray": "^2.3.4"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-optional-chaining": "^7.8.3",
     "nodemon": "^2.0.6"
   }
 }
